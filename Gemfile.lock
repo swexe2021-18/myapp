@@ -216,8 +216,6 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.6)
   rails-i18n
-  puma (~> 3.11)
-  rails (~> 5.2.6)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
