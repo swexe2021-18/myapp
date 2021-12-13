@@ -1,0 +1,18 @@
+<%= form_for @restaurant, url: {action: :create} do |f| %>
+  <p><%= f.label :shop, '店名' %> 
+  <%= f.text_field :shop %></p>
+  <p><%= f.label :area, 'エリア' %> 
+  <%= f.text_field :area %></p>
+  <p><%= f.label :genre, 'ジャンル' %> 
+  <%= f.text_field :genre %></p>
+  <p><%= f.label :time, '営業時間' %> 
+  <%= f.text_field :time %>&emsp;～&emsp;<%= f.text_field :deadtime %>&emsp;入力例）11:00</p>
+  <p><%= f.label :day, '定休日' %> 
+  <%= f.select :day, {'日':'日', '月':'月', '火':'火', '水':'水', '木':'木', '金':'金', '土':'土'}, {}, { multiple: true } %>
+  &emsp;※複数選択する場合はCtrlキーを押しながら選択してください
+  </p>
+  <p><%= f.label :other, '紹介' %> 
+  <%= f.text_field :other %></p>
+  <br>
+  <%= f.submit '投稿する' %>
+<% end %>

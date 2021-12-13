@@ -1,0 +1,28 @@
+<p>
+    <strong>店名：</strong>
+    <%= @restaurant.shop %>
+</p>
+<p>
+    <strong>エリア：</strong>
+    <%= @restaurant.area %>
+</p>
+<p>
+    <strong>ジャンル：</strong>
+    <%= @restaurant.genre %>
+</p>
+<p>
+    <strong>店名：</strong>
+    <%= @restaurant.shop %>
+</p>
+<p>
+    <strong>営業時間：</strong>
+    <%= @restaurant.time.strftime("%H:%M") %>&emsp;～&emsp;<%= @restaurant.deadtime.strftime("%H:%M") %>
+</p>
+<p>
+    <strong>定休日：</strong>
+    <%= @restaurant.day %>
+</p>
+<p>
+    <strong>紹介：</strong>
+    <%= @restaurant.other %>
+</p>
