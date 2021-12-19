@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   post 'top/login'
   get 'top/logout'
   resources :likes
-  root 'users#index'
+  resources :top
+  #root 'users#index'
   #root 'restaurants#index'
-  #root 'top#login'
+  root 'top#login'
 end

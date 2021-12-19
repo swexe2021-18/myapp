@@ -26,4 +26,8 @@ class UsersController < ApplicationController
     end
     redirect_to users_path
   end
+  
+  def show
+    @user = User.find(params[:id])
+  end
 end

@@ -1,6 +1,6 @@
 class Restaurant < ApplicationRecord
   validates :user, presence: true
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
   

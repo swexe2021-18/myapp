@@ -7,42 +7,27 @@
 <%= flash[:notice] %>
 <% end %>
 
-<div class = "center">
-<br>
-<h3>ユーザー一覧</h3>
-<div class = "table-responsive">
-<table class = "table table-bordered">
-<tr>
-<th>ユーザー</th>
-<th> </th>
-</tr>
-<% @users.each do |e| %>
-  <p>
-    <tr>
-    <td><%= e.uid %></td>
-    <% if current_user.uid == e.uid %>
-    <td><%= link_to '削除', user_path(e), method: :delete, class:"btn btn-outline-danger btn-sm" %></td>
-    <% end %>
-    </tr>
-    </p>
-<% end %>
-</table>
-</div>
-</div>
 
-<p>
-  <%= link_to '店舗一覧', restaurants_path, class:"btn btn-outline-primary btn-sm" %>
+
+<p> 
+<% if current_user %>
+  <%= link_to '投稿する', new_restaurant_path, class:"btn btn-outline-primary btn-sm" %>
+<% end %>
 </p>
 
 <p>
-  <%= link_to 'お気に入り一覧', likes_path, class:"btn btn-outline-primary btn-sm" %>
+  <%= link_to 'ユーザー一覧', users_path, class:"btn btn-outline-primary btn-sm" %>
+</p>
+
+<p> 
+  <%= link_to '店舗一覧', restaurants_path, class:"btn btn-outline-primary btn-sm" %>
 </p>
 
 <p>
 <% if current_user %>
   <%= link_to 'ログアウト', top_logout_path, class:"btn btn-outline-danger btn-sm" %>
 <% else %>
-  <%= link_to 'ログイン', root_path, class:"btn btn-outline-primary btn-sm" %>
+  <%= link_to 'ログイン', root_path, class:"btn btn-outline-success btn-sm" %>
 <% end %>
 </p>
 

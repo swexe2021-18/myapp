@@ -16,7 +16,7 @@ class RestaurantsController < ApplicationController
     other: params[:restaurant][:other], genre: params[:restaurant][:genre], user_id: current_user.id)
     if @restaurant.save
       flash[:notice] = "投稿しました"
-      redirect_to root_path
+      redirect_to restaurants_path
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class RestaurantsController < ApplicationController
     restaurant = Restaurant.find(params[:id])
     restaurant.destroy
     flash[:notice] = "投稿を削除しました"
-    redirect_to root_path
+    redirect_to restaurants_path
   end
   
   def show
@@ -43,6 +43,6 @@ class RestaurantsController < ApplicationController
     time: params[:restaurant][:time], deadtime: params[:restaurant][:deadtime], day: params[:restaurant][:day], 
     other: params[:restaurant][:other], genre: params[:restaurant][:genre], user_id: current_user.id)
     flash[:notice] = "更新しました"
-    redirect_to root_path
+    redirect_to restaurants_path
   end
 end

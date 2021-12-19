@@ -1,3 +1,4 @@
+<div class = "center">
 <p>
     <strong>店名：</strong>
     <%= @restaurant.shop %>
@@ -20,9 +21,10 @@
 </p>
 <p>
     <strong>定休日：</strong>
-    <%= @restaurant.day %>
+    <%= @restaurant.day.gsub(/[^\p{Hiragana}\p{Katakana}\p{Han}]/, '') %>
 </p>
 <p>
     <strong>紹介：</strong>
     <%= @restaurant.other %>
 </p>
+</div>

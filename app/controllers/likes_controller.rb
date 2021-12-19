@@ -4,7 +4,7 @@ class LikesController < ApplicationController
     unless restaurant.liked?(current_user)
       restaurant.like(current_user)
     end
-    redirect_to root_path
+    redirect_to restaurants_path
   end
 
   def destroy
@@ -12,6 +12,10 @@ class LikesController < ApplicationController
     if restaurant.liked?(current_user)
       restaurant.unlike(current_user)
     end
-    redirect_to root_path
+    redirect_to restaurants_path
+  end
+  
+  def index
+    @likes = Like.all
   end
 end
