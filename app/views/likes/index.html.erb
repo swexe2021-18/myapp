@@ -9,18 +9,23 @@
 
 
 
+
+<p>
+  <% if current_user %>
+  <%= link_to 'ユーザ一覧', users_path, class:"btn btn-outline-info btn-sm" %>
+  <% end %>
+</p>
+
 <p> 
-<% if current_user %>
-  <%= link_to '投稿する', new_restaurant_path, class:"btn btn-outline-primary btn-sm" %>
-<% end %>
+  <% if current_user %>
+  <%= link_to '店舗一覧', restaurants_path, class:"btn btn-outline-primary btn-sm" %>
+  <% end %>
 </p>
 
 <p>
-  <%= link_to 'ユーザー一覧', users_path, class:"btn btn-outline-primary btn-sm" %>
-</p>
-
-<p> 
-  <%= link_to '店舗一覧', restaurants_path, class:"btn btn-outline-primary btn-sm" %>
+  <% if current_user %>
+  <%= link_to 'トップページ', top_index_path, class:"btn btn-outline-secondary btn-sm" %>
+  <% end %>
 </p>
 
 <p>
@@ -29,8 +34,4 @@
 <% else %>
   <%= link_to 'ログイン', root_path, class:"btn btn-outline-success btn-sm" %>
 <% end %>
-</p>
-
-<p>
-  <%= link_to 'トップページ', top_index_path, class:"btn btn-outline-success btn-sm" %>
 </p>

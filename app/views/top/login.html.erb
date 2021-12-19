@@ -18,7 +18,7 @@
   <%= password_field_tag :pass %>
   <br>
   <br>
-  <%= submit_tag 'ログイン', class:"btn btn-primary btn-sm" %>
+  <%= submit_tag 'ログイン', class:"btn btn-success btn-sm" %>
   <% end %>
   <br>
   <br>
@@ -26,6 +26,34 @@
   <br>
   <br>
   <p>
-  <%= link_to '新規ユーザー追加', new_user_path, class:"btn btn-outline-primary btn-sm" %>
+  <%= link_to '新規ユーザー追加', new_user_path, class:"btn btn-outline-success btn-sm" %>
   </p>
 </div>
+
+<p>
+  <% if current_user %>
+  <%= link_to 'ユーザ一覧', users_path, class:"btn btn-outline-info btn-sm" %>
+  <% end %>
+</p>
+
+<p> 
+  <%= link_to '店舗一覧', restaurants_path, class:"btn btn-outline-primary btn-sm" %>
+</p>
+
+<p>
+  <% if current_user %>
+  <%= link_to 'お気に入り一覧', likes_path, class:"btn btn-outline-warning btn-sm" %>
+  <% end %>
+</p>
+
+<p>
+<% if current_user %>
+  <%= link_to 'ログアウト', top_logout_path, class:"btn btn-outline-danger btn-sm" %>
+<% end %>
+</p>
+
+<p>
+  <% if current_user %>
+  <%= link_to 'トップページ', top_index_path, class:"btn btn-outline-secondary btn-sm" %>
+  <% end %>
+</p>

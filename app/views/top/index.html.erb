@@ -7,22 +7,34 @@
 <%= flash[:notice] %>
 <% end %>
 
+<p> 
+<% if current_user %>
+  <%= link_to '投稿する', new_restaurant_path, class:"btn btn-primary btn-sm" %>
+<% end %>
+</p>
+
 <p>
-  <%= link_to 'ユーザ一覧', users_path, class:"btn btn-outline-primary btn-sm" %>
+  <% if current_user %>
+  <%= link_to 'ユーザ一覧', users_path, class:"btn btn-outline-info btn-sm" %>
+  <% end %>
 </p>
 
 <p> 
+  <% if current_user %>
   <%= link_to '店舗一覧', restaurants_path, class:"btn btn-outline-primary btn-sm" %>
+  <% end %>
 </p>
 
 <p>
-  <%= link_to 'お気に入り一覧', likes_path, class:"btn btn-outline-primary btn-sm" %>
+  <% if current_user %>
+  <%= link_to 'お気に入り一覧', likes_path, class:"btn btn-outline-warning btn-sm" %>
+  <% end %>
 </p>
 
 <p>
 <% if current_user %>
   <%= link_to 'ログアウト', top_logout_path, class:"btn btn-outline-danger btn-sm" %>
 <% else %>
-  <%= link_to 'ログイン', root_path, class:"btn btn-outline-primary btn-sm" %>
+  <%= link_to 'ログイン', root_path, class:"btn btn-outline-success btn-sm" %>
 <% end %>
 </p>
